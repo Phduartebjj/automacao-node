@@ -33,6 +33,13 @@ files.forEach((file) => {
   const ext = path.extname(file);
   const origem = path.join(desktop, file);
 
+  const info = fs.statSync(origem)
+
+  if(!info.isFile()){
+    return
+  }
+
+
   if (ext === ".stl") {
     const destino = path.join(dirStl, file);
     fs.renameSync(origem, destino);
