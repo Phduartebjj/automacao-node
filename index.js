@@ -4,7 +4,11 @@ const path = require("path");
 
 let usuario = os.homedir();
 
-let desktop = path.join(usuario, "Desktop");
+let Onedrive = path.join(usuario, "Onedrive");
+
+let desktop = path.join(Onedrive, "Desktop");
+
+let filesDesktop = fs.readdirSync(desktop);
 
 const modelos3D = path.join(desktop, "Modelos 3D");
 console.log(modelos3D);
